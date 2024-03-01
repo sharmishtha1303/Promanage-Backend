@@ -1,13 +1,13 @@
-// Import the mongoose module to work with MongoDB
+//  To interact with MongoDB
 const mongoose = require("mongoose")
 
-// Define a schema for the User collection
+// Define a schema 
 const Userschema = new mongoose.Schema({
-    // Define fields with their types and required status
-    name : {type : String, required : true}, // Name of the user
-    email : {type : String, required : true}, // Email of the user, must be unique
-    password : {type : String, required : true}, // Password of the user
+    // define skills
+    name : {type : String, required : true}, // User name
+    email : {type : String, required : true}, // email
+    password : {type : String, required : true}, // user pass
 })
 
-// Export the model to use it in other parts of the application
+// modal export
 module.exports = mongoose.model("User", Userschema)

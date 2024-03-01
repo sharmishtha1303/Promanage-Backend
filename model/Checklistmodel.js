@@ -1,18 +1,16 @@
-// Import the mongoose module to work with MongoDB
+//The mongoose module is imported to interact with MongoDB
 const mongoose = require("mongoose")
 
-// Define a schema for the Checklist collection
+//Checklistschema is defined using mongoose.Schema
 const Checklistschema = new mongoose.Schema({
-    // Define fields with their types and required status
-    priority : {type : String, required : true}, // Priority of the checklist item
-    name : {type : String, required : true}, // Name of the checklist item
-    duedate : {type : String}, // Due date for the checklist item (optional)
-    checklistarr : {type:Array, required:true}, // Array of checklist items
-    markedval : {type : Number, required : true}, // Value to mark checklist items
-    createdAt : {type : Number, required : true}, // Timestamp when the checklist was created
-    userid : {type : String, required:true}, // User ID associated with the checklist
-    sectiontype : {type:String, required:true} // Type of section for the checklist
+    priority: { type: String, required: true },//Represents the priority of the checklist item
+    name: { type: String, required: true },//Represents the name of the checklist item
+    duedate: { type: String },//Represents the optional due date for the checklist item
+    checklistarr: { type: Array, required: true },//Represents an array of checklist items
+    markedval: { type: Number, required: true },//Represents a numerical value used to mark checklist items
+    createdAt: { type: Number, required: true },//Represents the timestamp when the checklist was created
+    userid: { type: String, required: true },//Represents the user ID associated with the checklist
+    sectiontype: { type: String, required: true }//Represents the type of section for the checklist
 })
 
-// Export the model to use it in other parts of the application
 module.exports = mongoose.model("Checklist", Checklistschema)
